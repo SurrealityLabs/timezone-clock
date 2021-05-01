@@ -102,7 +102,14 @@ void render_time(time_t now, uint8_t bright) {
   for(i = 0; i < 10; i++)
   {
     render_time_buffer(&(times[i]), display_tmp);
-    strip.setPixelColor(i, display_tmp[0], display_tmp[1], display_tmp[2], display_tmp[3]);
+    if (bright > 0)
+    {
+      strip.setPixelColor(i, display_tmp[0], display_tmp[1], display_tmp[2], display_tmp[3]);
+    }
+    else
+    {
+      strip.setPixelColor(i, 0, 0, 0, 0);
+    }
   }
 
   yield();

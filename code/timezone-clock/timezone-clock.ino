@@ -253,7 +253,7 @@ void loop(void) {
       
       yield();
       // Time rendering code
-      breakTime(tmp_t, bright_now);
+      breakTime(my_tmp_t, bright_now);
 
       brightTime = (bright_now.Hour * 100) + bright_now.Minute;
 
